@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="load-pdf">Cargar Documento</button>
+    <canvas id="pdf-canvas"></canvas>
+    <div id="holder"></div>
+
+    <script src="./pdfjs-3.3.122-legacy-dist/build/pdf.js"></script>
+    <script src="./pdfjs-3.3.122-legacy-dist/build/pdf.worker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.385/build/pdf.min.js"></script>
+
+    <!-- <script src="/pdfjs-3.3.122-legacy-dist/build/pdf.js"></script>
+    <script src="path/to/pdf.worker.js"></script>
+    <script src="path/to/visor-de-documentos.js"></script> -->
+    <!-- <script>
+      // Obtener la referencia al botón de carga
+      var loadPdfButton = document.getElementById("load-pdf");
+      let currentPage = 0;
+      let paginas = 0;
+
+      // Agregar un controlador de eventos para cargar el documento PDF
+      loadPdfButton.addEventListener("click", function () {
+        // Obtener la referencia al elemento <canvas>
+        var canvas = document.getElementById("pdf-canvas");
+
+        // Obtener la referencia al objeto PDF.js
+        var pdfjsLib = window["pdfjs-dist/build/pdf"];
+
+        // Cargar el documento PDF
+        pdfjsLib
+          .getDocument(".\\Files\\ManualCargaListaPrecios_V2.pdf")
+          .promise.then(function (pdf) {
+            paginas = pdf.numPages;
+            console.log(paginas);
+            // Obtener la primera página del documento
+            return pdf.getPage(paginas);
+          })
+          .then(function (page) {
+            // Obtener las dimensiones de la página
+            var viewport = page.getViewport({ scale: 1 });
+
+            // Establecer el tamaño del elemento <canvas>
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            // Obtener el contexto de dibujo del elemento <canvas>
+            var context = canvas.getContext("2d");
+
+            // Renderizar la página en el elemento <canvas>
+            page.render({
+              canvasContext: context,
+              viewport: viewport,
+            });
+          });
+      });
+    </script> -->
+    <script>
+      function renderPDF(url, canvasContainer, options) {
+        options = options || { scale: 1 };
+
+        function renderPage(page) {
+          var viewport = page.getViewport(options.scale);
+          var wrapper = document.createElement("div");
+          wrapper.className = "canvas-wrapper";
+          var canvas = document.createElement("canvas");
+          var ctx = canvas.getContext("2d");
+          var renderContext = {
+            canvasContext: ctx,
+            viewport: viewport,
+          };
+
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          wrapper.appendChild(canvas);
+          canvasContainer.appendChild(wrapper);
+
+          page.render(renderContext);
+        }
+
+        function renderPages(pdfDoc) {
+          for (var num = 1; num <= pdfDoc.numPages; num++)
+            pdfDoc.getPage(num).then(renderPage);
+        }
+
+        PDFJS.disableWorker = true;
+        PDFJS.getDocument(url).then(renderPages);
+      }
+
+      renderPDF(
+        ".\\Files\\ManualCargaListaPrecios_V2.pdf",
+        document.getElementById("holder")
+      );
+    </script>
+  </body>
+</html>

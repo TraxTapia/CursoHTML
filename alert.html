@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- <form id="myForm">
+      <input type="text" id="name" />
+      <button type="submit">Enviar</button>
+    </form> -->
+    <!-- <h1>Registro</h1>
+    <form id="registrationForm">
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" />
+        <span id="nameError" style="color: red"></span>
+      </div>
+      <div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" />
+        <span id="emailError" style="color: red"></span>
+      </div>
+      <div>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" />
+        <span id="passwordError" style="color: red"></span>
+      </div>
+      <button type="submit">Registrarse</button>
+    </form> -->
+    <form id="registrationForm" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+        />
+        <div class="invalid-feedback">
+          Por favor, introduce un nombre válido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+        <div class="invalid-feedback">
+          Por favor, introduce un correo electrónico válido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+        <div class="invalid-feedback">
+          Por favor, introduce una contraseña válida.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <script>
+      // Agrega el evento 'submit' al formulario
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          if (!this.checkValidity()) {
+            event.preventDefault(); // Evita el envío del formulario si no es válido
+            event.stopPropagation(); // Detiene la propagación del evento
+
+            // Agrega la clase 'was-validated' para mostrar los estilos de validación de Bootstrap
+            this.classList.add("was-validated");
+          }
+        });
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.9.0/validator.min.js"
+        integrity="sha512-mC5BW2SjEdyK0/AwoSMdAUOq3xv9zzNwbWLiQLTlriZ9b9Tq0vLTwe7aBgD44Xq8ud8rhr533rbY97s5GA+d2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.6.0/dist/validator.min.js"></script> -->
+
+    <!-- <script>
+        document
+            .getElementById("registrationForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault(); // Evita el envío del formulario
+
+                // Obtén los valores de los campos
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                // Limpia los mensajes de error
+                document.getElementById("nameError").textContent = "";
+                document.getElementById("emailError").textContent = "";
+                document.getElementById("passwordError").textContent = "";
+
+                // Realiza la validación
+                var errors = {};
+
+                if (validator.isEmpty(name)) {
+                    errors.name = "El nombre es obligatorio.";
+                }
+
+                if (!validator.isEmail(email)) {
+                    errors.email = "El correo electrónico no es válido.";
+                }
+
+                if (!validator.isLength(password, {
+                        min: 6
+                    })) {
+                    errors.password = "La contraseña debe tener al menos 6 caracteres.";
+                }
+
+                // Muestra los mensajes de error si existen
+                if (Object.keys(errors).length > 0) {
+                    if (errors.name) {
+                        document.getElementById("nameError").textContent = errors.name;
+                    }
+
+                    if (errors.email) {
+                        document.getElementById("emailError").textContent = errors.email;
+                    }
+
+                    if (errors.password) {
+                        document.getElementById("passwordError").textContent =
+                            errors.password;
+                    }
+
+                    return; // Detiene el proceso de envío del formulario
+                }
+
+                // Si la validación es exitosa, puedes enviar el formulario al servidor aquí
+                console.log("Formulario enviado");
+            });
+    </script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          var name = document.getElementById("name").value;
+
+          if (name === "") {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Muestra la alerta de SweetAlert
+            Swal.fire({
+              icon: "error",
+              title: "Error de validación",
+              text: "Por favor, introduce un nombre válido.",
+            });
+          }
+        });
+    </script> -->
+  </body>
+</html>

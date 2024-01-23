@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bolsa</h1>
+      <br>
+     <input type="text" id="input-busqueda" placeholder="Buscaaar...">
+<div class="row">
+    <div class="col-md-12">
+
+        <table>
+            <tbody id="the_table_body">
+				<tr>
+					<td> <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <p>
+                                        <button type="button" class="btn btn-default btn-md" style="float: right;" onclick="location.href='bolsa.aspx'">POSTULARME</button>                   
+                                        <h2 class="section-title text-left wow fadeInDown fw-300 hiblue"><strong>Analista de Información</strong></h2>
+                                        <strong>Empresa:</strong> Medi Access, S.A.P.I. de C.V.<br>
+                                        <strong>Departamento:</strong> OPERACIONES MAC<br>
+                                        <strong>Descripcion del puesto: </strong> Manejo de base de datos, Facilidad de palabra, Organizado, Enfoque a resultados <br>
+                                        <strong>Requisitos: </strong> Escolaridad: Bachillerato, Experiencia en: En captura, Conocimiento de paquetería de office nivel básico/intermedio, Disponibilidad inmediata. <br>
+                                        <strong>Ubicacion del puesto: </strong> Torre Pedregal <br>
+                                        <strong>Número de vacantes:</strong> 1
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </div></td>
+					
+				</tr>
+				<tr>
+					<td>  
+                        <div class="row">
+                          <div class="col-md-12">
+                              <div class="panel panel-default">
+                                  <div class="panel-body">
+                                      <p>
+                                          <button type="button" class="btn btn-default btn-md" style="float: right;" onclick="location.href='bolsa.aspx'">POSTULARME</button>                   
+                                          <h2 class="section-title text-left wow fadeInDown fw-300 hiblue"><strong>Soporte</strong></h2>
+                                          <strong>Empresa:</strong> Medi Access, S.A.P.I. de C.V.<br>
+                                          <strong>Departamento:</strong> Sistemas MAC<br>
+                                          <strong>Descripcion del puesto: </strong> Manejo de base de datos, Facilidad de palabra, Organizado, Enfoque a resultados <br>
+                                          <strong>Requisitos: </strong> Escolaridad: Bachillerato, Experiencia en: En captura, Conocimiento de paquetería de office nivel básico/intermedio, Disponibilidad inmediata. <br>
+                                          <strong>Ubicacion del puesto: </strong> Torre Pedregal <br>
+                                          <strong>Número de vacantes:</strong> 1
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </td>
+					
+				</tr>
+                <tr>
+					<td>  
+                        <div class="row">
+                          <div class="col-md-12">
+                              <div class="panel panel-default">
+                                  <div class="panel-body">
+                                      <p>
+                                          <button type="button" class="btn btn-default btn-md" style="float: right;" onclick="location.href='bolsa.aspx'">POSTULARME</button>                   
+                                          <h2 class="section-title text-left wow fadeInDown fw-300 hiblue"><strong>estan culeras las vacantes</strong></h2>
+                                          <strong>Empresa:</strong> Medi Access, S.A.P.I. de C.V.<br>
+                                          <strong>Departamento:</strong> OPERACIONES MAC<br>
+                                          <strong>Descripcion del puesto: </strong> Manejo de base de datos, Facilidad de palabra, Organizado, Enfoque a resultados <br>
+                                          <strong>Requisitos: </strong> Escolaridad: Bachillerato, Experiencia en: En captura, Conocimiento de paquetería de office nivel básico/intermedio, Disponibilidad inmediata. <br>
+                                          <strong>Ubicacion del puesto: </strong> Torre Pedregal <br>
+                                          <strong>Número de vacantes:</strong> 1
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </td>
+					
+				</tr>
+			
+			
+				
+			</tbody>
+        </table>
+        <!-- <div id="mi-div">
+            <p>Este es un párrafo de ejemplo.</p>
+            <p>Otro párrafo que contiene texto.</p>
+            <p>Un tercer párrafo para la demostración.</p>
+          </div>
+          
+          <input type="text" id="input-busqueda" placeholder="Buscar..."> -->
+          
+        
+    </div>
+</div>
+
+
+   
+    </div>
+    <script>    
+    const inputBusqueda = document.getElementById('input-busqueda');
+    const tabla = document.querySelector('table tbody');
+    const filas = tabla.querySelectorAll('tr');
+    inputBusqueda.addEventListener('keyup', function () {
+        const consulta = inputBusqueda.value.toLowerCase();
+        filas.forEach(function (fila) {
+            const textoFila = fila.textContent.toLowerCase();
+            const coincide = textoFila.indexOf(consulta) > -1;
+            fila.style.display = coincide ? '' : 'none'; });
+        });
+
+        // const inputBusqueda = document.getElementById('input-busqueda');
+        // const div = document.getElementById('mi-div');
+        // const parrafos = div.querySelectorAll('p');
+        
+        // inputBusqueda.addEventListener('keyup', function () {
+        //   const consulta = inputBusqueda.value.toLowerCase();
+        //   parrafos.forEach(function (parrafo) {
+        //     const textoParrafo = parrafo.textContent.toLowerCase();
+        //     const coincide = textoParrafo.indexOf(consulta) > -1;
+        //     parrafo.style.display = coincide ? '' : 'none';
+        //   });
+        // });
+        
+    </script>
+  </body>
+</html>

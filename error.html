@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>SAMIWEB</title>
+	<link rel="stylesheet" href="https://deserviciosti.mediaccess.com.mx/samiweb20test/public/css/libs.min.css?id=f55b8af4583ee981b746">
+				<link rel="stylesheet" href="https://deserviciosti.mediaccess.com.mx/samiweb20test/public/css/reportes-medicamento.min.css?id=5ac64f25f8cc2055f911">
+	</head>
+<body class="hold-transition sidebar-mini" ng-app="SamiWeb">
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a></li>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<span class="nav-link">Ivan Tapia</span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://deserviciosti.mediaccess.com.mx/samiweb20test/logout" title="Salir"><i class="fa fa-sign-out-alt"></i></a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/home"> 
+				<img src="https://deserviciosti.mediaccess.com.mx/samiweb20test/public/img/logo.png" alt="Mediaccess" class="brand-image" style="max-height: 90px; margin-left: 1.8rem">
+			</a>
+
+			<!-- Sidebar -->
+			<div class="sidebar" style="display: inline-block">
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+
+												<li class="nav-item has-treeview ">
+
+
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fa fa-file-invoice-dollar"></i>
+								<p>Facturas <i class="right fa fa-angle-left"></i></p>
+							</a>
+							<ul class="nav nav-treeview">
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/recepcionar" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recepcionar</p>
+									</a>
+								</li>
+																
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/parametros" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Párametros</p>
+									</a>
+								</li>
+								
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/parametrosXRFC" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Párametros por RFC</p>
+									</a>
+								</li>
+																
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/recepcionPemex" class="nav-link">
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recepcion PEMEX</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/oficina" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recepción Oficina</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/consultar" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Consultar</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/pendiente" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Pendiente</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/modificar" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Modificar</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/modificarcantidad" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Modificar Cantidad</p>
+									</a>
+								</li>
+																									<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/modificarReembolsos" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Modificar Cantidad Reembolsos</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/devolver" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Devolver</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/devolucionMasiva" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Devoluci&oacute;n masiva</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/seguimientoDevoluciones" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Seguimiento devoluciones</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/reembolso" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recepci&oacute;n reembolso</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/quitarDerrama" class="nav-link">
+										<i class="far fa-circle nav-icon "></i>
+										<p>Quitar Derrama</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/quitarDerramaReembolso" class="nav-link">
+										<i class="far fa-circle nav-icon "></i>
+										<p>Quitar Derrama Reembolso</p>
+									</a>
+								</li>
+																									<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/estatus" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Estatus de facturas</p>
+										</a>
+									</li>
+																									<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/cargaMasiva" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Carga Masiva</p>
+										</a>
+									</li>
+																									<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/cargaMasivaReingreso" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Carga Masiva Reingreso</p>
+										</a>
+									</li>
+																										<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/facturas/consultaXMLSAT" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Consulta UUID SAT</p>
+										</a>
+									</li>
+															</ul>
+						</li>
+						
+												<li class="nav-item has-treeview ">
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fa fa-money-check-alt"></i>
+								<p>Nota de crédito<i class="right fa fa-angle-left"></i></p>
+							</a>
+							<ul class="nav nav-treeview">
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/notas-credito/facturas" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Facturas a nota de credito</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/notas-credito/consultanc" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Consulta</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/notas-credito/recepcion" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recepci&oacute;n</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/notas-credito/cargaMasivaNC" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Carga Masiva</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/notas-credito/cargaPagadas" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>CargaNC - FPagada</p>
+									</a>
+								</li>
+															</ul>
+						</li>
+						
+												<li class="nav-item has-treeview menu-open">
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fa fa-file-excel"></i>
+								<p>Reportes<i class="right fa fa-angle-left"></i></p>
+							</a>
+							<ul class="nav nav-treeview">
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/reportes-medicamento" class="nav-link"> 
+										<i class="far fa-circle nav-icon text-success"></i>
+										<p>Reporte medicamento</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/reportes" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Reportes</p>
+									</a>
+								</li>
+															</ul>
+						</li>
+						
+												<li class="nav-item has-treeview ">
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fa fa-archive"></i>
+								<p>Admin. Devoluciones<i class="right fa fa-angle-left"></i></p>
+							</a>
+							<ul class="nav nav-treeview">
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/paquete" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Crear Paquetes Dev.</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/paquetever" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Recibir Devoluciones</p>
+									</a>
+								</li>
+								 
+																<!--
+								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/entregar-foraneo" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Captura Paq. Foráneo</p>
+									</a>
+								</li> -->
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/entregar" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Entregar Paquete</p>
+									</a>
+								</li>
+													
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/estatus" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Estatus Devolución</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/grupos" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Administrar Grupos</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/grupoProveedor" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Altas Grupos</p>
+									</a>
+								</li>
+								
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/devoluciones/enviocorreo" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Correos Enviados</p>
+									</a>
+								</li>
+															</ul>
+						</li>
+						
+												<li class="nav-item has-treeview ">
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fa fa-hand-holding-usd"></i>
+								<p>Remesas<i class="right fa fa-angle-left"></i></p>
+							</a>
+							<ul class="nav nav-treeview">
+																<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/remesas/archivo" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Archivo</p>
+									</a>
+								</li>
+																								<li class="nav-item">
+									<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/remesas/portada" class="nav-link"> 
+										<i class="far fa-circle nav-icon "></i>
+										<p>Portada Remesas</p>
+									</a>
+								</li>
+															</ul>
+						</li>
+						
+												<li class="nav-item has-treeview">
+							<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/tabulador" class="nav-link "> 
+								<i class="nav-icon fa fa-funnel-dollar"></i>
+								<p>Tabulador</p>
+							</a>
+						</li>
+						 
+
+													<li class="nav-item has-treeview ">
+								<a href="#" class="nav-link">
+									<i class="nav-icon fa fa-user"></i>
+									<p>Usuarios<i class="right fa fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+																			<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/usuarios/listar" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Lista</p>
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/usuarios/crear" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Crear</p>
+											</a>
+										</li>
+																												<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/usuarios/permisos" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Permisos</p>
+											</a>
+										</li>
+																	</ul>
+							</li>
+						
+													<li class="nav-item has-treeview">
+								<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/empresas/listar" class="nav-link ">
+									<i class="nav-icon fa fa-book"></i>
+									<p>Empresas Web</p>
+								</a>
+							</li>
+						
+													<li class="nav-item has-treeview">
+								<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/lista-precios" class="nav-link ">
+									<i class="nav-icon fa fa-list-ol"></i>
+									<p>Lista de precios</p>
+								</a>
+							</li>
+						
+						
+													<li class="nav-item has-treeview ">
+								<a href="#" class="nav-link">
+									<i class="nav-icon fa fa-archive"></i>
+									<p>Paquetes<i class="right fa fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+																			<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/paquetes-recepcion" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Crear paquete Recepci&oacute;n</p>
+											</a>
+										</li>
+																												<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/paquetes" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Crear otros paquetes</p>
+											</a>
+										</li>
+																												<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/paquetes/buscar" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Buscar</p>
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/paquetes/revisar" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Revisar</p>
+											</a>
+										</li>
+																	</ul>
+							</li>
+						
+													<li class="nav-item has-treeview ">
+								<a href="#" class="nav-link">
+									<i class="nav-icon fa fa-user"></i>
+									<p>Captura<i class="right fa fa-angle-left"></i></p>
+								</a>
+								<ul class="nav nav-treeview">
+																			<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/upload" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Cargar</p>
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/estatus/secuencia" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Valida Secuencia</p>
+											</a>
+										</li>	
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/capturar" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Capturar</p>
+											</a>
+										</li>										
+																												<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/listar" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Lista remesas</p>
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/cajas" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Cajas</p>
+											</a>
+										</li>
+																												<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/reportes" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Reportes</p>
+											</a>
+										</li>
+										<!--
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/analisis" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Analisis</p>
+											</a>
+										</li>-->
+										<li class="nav-item">
+											<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/total-archivistas" class="nav-link">
+												<i class="far fa-circle nav-icon "></i>
+												<p>Total archivistas</p>
+											</a>
+										</li>
+																		<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/prestamos" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Prestamos</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/devoluciones" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Devoluci&oacute;n</p>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="https://deserviciosti.mediaccess.com.mx/samiweb20test/captura/prestadas" class="nav-link">
+											<i class="far fa-circle nav-icon "></i>
+											<p>Prestadas</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+											</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<div class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1 class="m-0 text-dark">Consulta de reportes sobre medicamentos</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main content -->
+	<section class="content" ng-controller="ReportesController">
+		<div class="container-fluid">
+			<form method="post" class="needs-validation row" id="frmReportes">
+				<input type="hidden" name="_token" value="lMhLOFiWtYMrVXar4WaO3Mc90hE3NmeqNOU9lE7F">				<div class="form-group input-group has-feedback col-md-4 col-sm-12">
+					<div class="col-12">
+						<label for="chkProveedor" class="col-4" style="vertical-align: middle;">Filtrar por proveedor</label>
+						<input type="checkbox" id="chkProveedor" name="chkProveedor" ng-model="data.chkProveedor" ng-required="!data.chkEAN" style="width: 16px; height: 16px">
+					</div>
+					<div ng-show="data.chkProveedor" class="col-12">
+						<select ng-model="data.proveedor" ng-required="data.chkProveedor"  class="col-6 form-control select2">
+														<option value="65100">ACESO DISTRIBUIDORA DE MEDICAMENTOS</option>
+														<option value="61121">ADMINISTRACION DE SERVICIOS MEDICOS RODARO SA DE CV</option>
+														<option value="64042">ALIVIA CLINICA DE ALTA ESPECIALIDAD</option>
+														<option value="65385">APOTECARIA INTERNATIONAL PHARMACY</option>
+														<option value="50715">ASESORES MEDICOS</option>
+														<option value="62829">BIOLOGICOS ESPECIALIZADOS SA DE CV</option>
+														<option value="64571">BOTICA CENTRAL</option>
+														<option value="54142">BOUCHE YANEZ JOSE ROBERTO</option>
+														<option value="59860">CALLEJA SANCHEZ MARCO ANTONIO</option>
+														<option value="61820">CAMS MUGUERZA</option>
+														<option value="60721">CENTRAL DE ESPECIALIDADES MEDICAS</option>
+														<option value="58975">CENTRO DE DESARROLLO INFANTIL Y MEDICINA DE ESPECIALIDAD SA DE CV</option>
+														<option value="54774">CENTRO DE ESPECIALIDADES JEMA SIGLO XXI SA DE CV</option>
+														<option value="62410">CENTRO DE TRAUMA Y CIRUGIA ESPECIALIZADAD SA DE CV</option>
+														<option value="59358">CENTRO MEDICO DE TOLUCA</option>
+														<option value="65562">CENTRO MEDICO MONTERREY SALTILLO-HUMAN HOSPITAL</option>
+														<option value="64711">CENTRO MEDICO SAN DIEGO</option>
+														<option value="65730">CHRISTUS MUGUERZA SAN NICOLAS</option>
+														<option value="62001">CHRISTUS MUGUERZA SISTEMAS HOSPITALARIOS SA DE CV</option>
+														<option value="65486">CIMESA</option>
+														<option value="65382">CLINICA NOGALAR</option>
+														<option value="65402">CLINICA SAN BENITO SC</option>
+														<option value="51513">CLINICA Y FARMACIA MEXICO SA</option>
+														<option value="63560">COMERCIAL CITY FRESKO</option>
+														<option value="51525">COMERCIALIZADORA FARMACEUTICA DEL SURESTE SA DE CV</option>
+														<option value="61069">COMERCIALIZADORA LEUCOTEC SA DE CV</option>
+														<option value="54819">COSCAMI SA DE CV FARMACIA DEL CENTRO MEDICO COSCAMI</option>
+														<option value="62893">DEFA SA DE CV</option>
+														<option value="64595">DEMSA</option>
+														<option value="92616">ENFERMERAS UNIDAS MEXICO SA DE CV</option>
+														<option value="65657">FARMA LEAL</option>
+														<option value="64053">FARMA VALUE</option>
+														<option value="63515">FARMACEUTICA LOS ARCOS S.A DE C.V</option>
+														<option value="51832">FARMACIA ALIANZA SA DE CV</option>
+														<option value="60203">FARMACIA ALMATER</option>
+														<option value="64973">FARMACIA ALMATER NOVENA</option>
+														<option value="58965">FARMACIA ASESORES MEDICOS</option>
+														<option value="64752">FARMACIA CLINICA GUADALUPE</option>
+														<option value="50693">FARMACIA DERMATOLOGICA</option>
+														<option value="62042">FARMACIA ESPECIALIZADA</option>
+														<option value="65085">FARMACIA ESPERANZA Y FIDELIDAD</option>
+														<option value="57991">FARMACIA FARMARAPIDO</option>
+														<option value="52266">FARMACIA GENESIS</option>
+														<option value="51838">FARMACIA GUADALAJARA</option>
+														<option value="65675">FARMACIA HOSPITAL SANTE</option>
+														<option value="65376">FARMACIA INMEDI-K</option>
+														<option value="57936">FARMACIA KINO SA</option>
+														<option value="50723">FARMACIA LA POPULAR</option>
+														<option value="64942">FARMACIA LIQUIS</option>
+														<option value="59348">FARMACIA LIVERPOOL</option>
+														<option value="57838">FARMACIA LOPEZ</option>
+														<option value="60238">FARMACIA MARVA</option>
+														<option value="64719">FARMACIA MEDICA</option>
+														<option value="59326">FARMACIA MEDICO QUIRURGICA HUATULCO</option>
+														<option value="60212">FARMACIA MINERA</option>
+														<option value="65632">FARMACIA SANTA CRUZ DE ESPECIALIDADES</option>
+														<option value="61077">FARMACIA SANTA CRUZ DE MORELIA S DE RL DE CV</option>
+														<option value="60501">FARMACIA SANTA MARIA</option>
+														<option value="51852">FARMACIAS ABC</option>
+														<option value="64898">FARMACIAS ABC</option>
+														<option value="64897">FARMACIAS BENAVIDES</option>
+														<option value="65618">FARMACIAS BENAVIDES</option>
+														<option value="50670">FARMACIAS BENAVIDES SAB DE CV</option>
+														<option value="59352">FARMACIAS CANCUN</option>
+														<option value="61208">FARMACIAS COYOACAN</option>
+														<option value="64646">FARMACIAS DE LA RIVIERA</option>
+														<option value="63468">FARMACIAS DEL AHORRO</option>
+														<option value="63955">FARMACIAS DEL AHORRO MÉRIDA BANRURAL</option>
+														<option value="63956">FARMACIAS DEL AHORRO TEPIC BANRURAL</option>
+														<option value="63958">FARMACIAS DEL AHORRO TUXTEPEC BANRURAL</option>
+														<option value="63954">FARMACIAS DEL AHORRO TUXTLA BANRURAL</option>
+														<option value="63957">FARMACIAS DEL AHORRO VERACRUZ BANRURAL</option>
+														<option value="58030">FARMACIAS ECONOMIK SA DE CV</option>
+														<option value="57796">FARMACIAS ESPIMED</option>
+														<option value="59350">FARMACIAS LA VILLA</option>
+														<option value="64634">FARMACIAS LINDAVISTA</option>
+														<option value="61097">FARMACIAS OBISPADO</option>
+														<option value="61220">FARMACIAS PALMAS</option>
+														<option value="60838">FARMACIAS PEGASO</option>
+														<option value="51857">FARMACIAS PUREX</option>
+														<option value="61221">FARMACIAS SATELITE</option>
+														<option value="64516">FARMACIAS UNION</option>
+														<option value="61530">FARMACIAS VILLAHERMOSA</option>
+														<option value="51866">FARMACON</option>
+														<option value="50661">FARMACOS ESPECIALIZADOS SA DE CV</option>
+														<option value="54674">FARMAPRONTO</option>
+														<option value="57423">FARMATODO</option>
+														<option value="65364">FARMATODO BELLA VISTA</option>
+														<option value="50702">FARMATODO COFAR</option>
+														<option value="64736">FARMATODO SAE Y LUZ Y FUERZA</option>
+														<option value="94536">FARMATORBA ESPECIALIZADA SA DE CV</option>
+														<option value="64751">FLORES Y REGALOS ANGELES</option>
+														<option value="65074">FLORES Y REGALOS ANGELES</option>
+														<option value="51925">FLORES Y REGALOS ANGELES SA DE CV</option>
+														<option value="62630">GONZALEZ CARRILLO ANGELICA</option>
+														<option value="61227">GRUPO FARMACEUTICO Y ABARROTEROS DE VERACRUZ SA DE CV</option>
+														<option value="64809">HAPPPY HEALTCARE</option>
+														<option value="62827">HEALTH SERVICE ALIANCE SERVICIOS SA DE CV</option>
+														<option value="93354">HENDERSON SERVICIOS DE ENFERMERIA SA DE CV</option>
+														<option value="58781">HERSA FARMACIA</option>
+														<option value="64932">HISPANO AMERICANO FARMACIA</option>
+														<option value="63306">HOMEOPATICA INTEGRAL SA DE CV</option>
+														<option value="65131">HOSPITAL CENTER VISTA HERMOSA</option>
+														<option value="64982">HOSPITAL DE LA FAMILIA</option>
+														<option value="65433">HOSPITAL DE LA MUJER</option>
+														<option value="65823">HOSPITAL HUMANITAS TLAXCALA</option>
+														<option value="65577">HOSPITAL MEDICA BRISAS</option>
+														<option value="60725">INTEGRAMED</option>
+														<option value="64697">INTEGRAMED</option>
+														<option value="64422">INTEGRAMED (CUIDADOS PALIATIVOS)</option>
+														<option value="65469">INTEGRAMED MEDICAMENTOS A DOMICILIO</option>
+														<option value="65721">KALI SERVICIOS MEDICOS Y SUMINISTROS HOSPITALARIOS</option>
+														<option value="52519">KLYNS FARMACIAS SA DE CV</option>
+														<option value="64598">LA NUEVA FARMACIA</option>
+														<option value="52771">MARTINEZ DAVALOS JUAN JOSE</option>
+														<option value="57738">MEDICAMENTOS POPULARES DEL BAZAR SA DE CV</option>
+														<option value="62822">MEDICINA DE CALIDAD SILVER FARMACIA</option>
+														<option value="64592">MEDICINA INTEGRAL Y FARMACEUTICA DE SONORA MIFSA SA DE CV</option>
+														<option value="60947">MEDICLINIC SA DE CV</option>
+														<option value="94977">MEDIKAMENT 2020</option>
+														<option value="52882">MENDOZA ORTEGA MARIA GUADALUPE</option>
+														<option value="60689">MG FARMACIAS DEL MAGISTERIO</option>
+														<option value="94135">NINNUS</option>
+														<option value="93259">NOVARUM</option>
+														<option value="65573">NURA ABUBAKAR</option>
+														<option value="65770">OPERADORA DE FARMACIAS CESFAM</option>
+														<option value="61142">OPERADORA DE SERVICIOS MEDICOS INTEGRALES SA DE CV</option>
+														<option value="65349">ORTOPEDICOS Y PRODUCTOS MAX</option>
+														<option value="53270">PHARMA PLUS SA DE CV SAN PABLO</option>
+														<option value="63915">PHOENIX FARMACEUTICA S.A. DE C.V.</option>
+														<option value="64728">PM FARMACOS</option>
+														<option value="63609">PREMIER PHARMA ALTA ESPECIALIDAD</option>
+														<option value="65569">PRO SUPERACION  FAMILIAR NEOLONESA  AC</option>
+														<option value="61266">PROLIFE</option>
+														<option value="64472">QUICK MEDICINE SA DE CV</option>
+														<option value="60230">SANATORIO DE BENEFICENCIA ESPAÑOLA DE LA LAGUNA</option>
+														<option value="62090">SANATORIO PEÑARRIETA DAHER</option>
+														<option value="53653">SANATORIO SAN JOSE DE GOMEZ PALACIO DURANGO</option>
+														<option value="91303">SERBITECSA SA DE CV</option>
+														<option value="63462">SERVICIOS MEDICOS SEMIS</option>
+														<option value="00000">SISTEMAS.</option>
+														<option value="60664">SOCIEDAD ESPAÑOLA DE BENEFICENCIA</option>
+														<option value="65731">ST JOSEPHS S DE RL DE CV</option>
+														<option value="65534">SUPER FARMACIA SANTA MARIA</option>
+														<option value="94136">TORRES PASILLA KARLA</option>
+														<option value="54422">UNIDAD DE METROLOGIA CLINICA SA DE CV</option>
+														<option value="93448">VACNA</option>
+														<option value="60782">VAZQUEZ COTERO GUADALUPE</option>
+														<option value="58960">WALMART DE MEXICO S DE RL DE CV</option>
+													</select>
+					</div>
+					<div class="invalid-feedback">Debe proporcionar un proveedor.</div>
+				</div>
+				<div class="form-group input-group has-feedback col-md-4 col-sm-12">
+					<div class="col-12">
+						<label for="chkEAN" class="col-4" style="vertical-align: middle;">Filtrar por c&oacute;digo EAN</label>
+						<input type="checkbox" id="chkEAN" name="chkEAN" ng-model="data.chkEAN" ng-required="!data.chkProveedor" style="width: 16px; height: 16px">
+					</div>
+					<input type="text" ng-model="data.EAN" ng-required="data.chkEAN" ng-show="data.chkEAN" id="EAN" name="EAN" class="col-6 form-control">
+					<div class="invalid-feedback">Debe proporcionar un c&oacute;digo EAN.</div>
+				</div>
+				<div class="form-group input-group has-feedback col-md-4 col-sm-12">
+					<div class="col-12">
+						<label for="chkFecha" class="col-4" style="vertical-align: middle;">Filtrar por fecha</label>
+						<input type="checkbox" id="chkFecha" name="chkFecha" ng-model="data.chkFecha" ng-disabled="!data.chkEAN && !data.chkProveedor" style="width: 16px; height: 16px">
+					</div>
+					<div class="col-12 input-group has-feedback form-group" ng-show="data.chkFecha">
+						<input type="text" ng-model="data.fecha" ng-required="data.chkFecha"  id="fecha" name="fecha" class="col-6 form-control">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fa fa-calendar"></i></span>
+						</div>
+						<div class="invalid-feedback">Proporcione una fecha v&aacute;lida.</div>
+					</div>
+
+				</div>
+				<div class="row justify-content-md-center col-12">
+					<button type="button" class="btn btn-primary"  ng-click="buscar()" ng-disabled="!data.chkEAN && !data.chkProveedor">Buscar</button>
+				</div>
+			</form>
+
+			<div ng-if="msgF != ''" class="mt-4"><% msgF %></div>
+			<div id="busquedaResults" ng-if="res.length > 0" class="mt-4">
+				<table class="table table-bordered table-condensed table-striped table-responsive" data-page-length="25">
+					<thead>
+					<tr>
+						<th>cod_prov</th>
+						<th>cod_ean</th>
+						<th>sal</th>
+						<th>nombre comercial</th>
+						<th>pmp</th>
+						<th>descuento</th>
+						<th>laboratorio</th>
+						<th>tipo</th>
+						<th>dia</th>
+						<th>mes</th>
+						<th>año</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="f in res" ng-init="$last && dt('busquedaResults')">
+						<td><% f.cve_prov %></td>
+						<td><% f.ean %></td>
+						<td><% f.sal %></td>
+						<td><% f.nombrecomercial %></td>
+						<td><% f.pmp | currency:"$":2  %></td>
+						<td><% f.descuento %>%</td>
+						<td><% f.laboratorio  %></td>
+						<td><% f.tipo  %></td>
+						<td><% f.diaVigencia  %></td>
+						<td><% f.mesVigencia  %></td>
+						<td><% f.anioVigencia  %></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+        	
+</div>
+		
+		<!-- /.content-wrapper -->
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			
+		</aside>
+		<!-- /.control-sidebar -->
+
+		<!-- Main Footer -->
+		<footer class="main-footer">
+			<strong>
+				Copyright &copy; 2019  <a href="https://www.mediaccess.com.mx/" target="_blank">MediAccess</a>.
+			</strong> 
+			All rights reserved.
+		</footer>
+
+		<spinner show="loading"></spinner>
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- REQUIRED SCRIPTS -->
+	<script src="https://deserviciosti.mediaccess.com.mx/samiweb20test/public/js/libs.min.js?id=bcd6e3f62abf85df7480"></script>
+		<script type="text/javascript">
+	var app_url = "https://deserviciosti.mediaccess.com.mx/samiweb20test";
+	var samiwebApp = angular.module('SamiWeb', [], function($interpolateProvider) {
+        $interpolateProvider.startSymbol('<%');
+        $interpolateProvider.endSymbol('%>');
+    }).directive('spinner', ['$timeout', function ($timeout) {
+        return {
+            restrict: 'EA',
+            template: '<div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadingModalLabel" aria-hidden="true">\n' +
+                '<div class="modal-dialog" role="document" style="width: 30px; margin: 10% auto">\n' +
+                '<button class="btn btn-sm btn-success"><span class="fa fa-sync-alt animate"></span> Cargando...</button>\n' +
+                '</div>\n' +
+                '</div>',
+            scope: {
+                show: '=',
+            },
+            replace: true,
+            link: function (scope) {
+                scope.$watch('show', function () {
+                    var element = angular.element('#loadingModal');
+                    if (scope.show) {
+                        element.modal('show');
+                    } else {
+                        element.modal('hide');
+                    }
+                });
+            }
+        };
+    }]).config(['$httpProvider', function($httpProvider) {
+        $httpProvider.interceptors.push(function($q) {
+            return {
+                'responseError': function(rejection){
+                    var defer = $q.defer();
+                    if(rejection.status == 401 || rejection.status == 419){
+                        location.href = app_url;
+                    }
+                    defer.reject(rejection);
+                    return defer.promise;
+                }
+            };
+        });
+    }]);
+
+	</script>
+		<script>
+		var prov = '65100';
+	</script>
+			<script src="https://deserviciosti.mediaccess.com.mx/samiweb20test/public/js/reportes-medicamento.min.js?id=ecd1179744bbe8c7366b"></script>
+	
+</body>
+</html>

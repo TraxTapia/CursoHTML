@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <script src="../TagsLibrary/jquery-3.4.1.js"></script>
+    <script src="../TagsLibrary/jquery.caret.min.js"></script>
+    <!-- <script src="../TagsLibrary/jquery.tag-editor.css"></script> -->
+    <script src="../TagsLibrary/jquery-ui.min.js"></script>
+    <script src="../TagsLibrary/jquery.tag-editor.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <style>
+    /* surrounding tag container */
+    .tag-editor {
+      list-style-type: none;
+      padding: 0 5px 0 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #eee;
+      cursor: text;
+      font: normal 14px sans-serif;
+      color: #555;
+      background: #fff;
+      line-height: 20px;
+    }
+
+    /* core styles usually need no change */
+    .tag-editor li {
+      display: block;
+      float: left;
+      overflow: hidden;
+      margin: 3px 0;
+    }
+    .tag-editor div {
+      float: left;
+      padding: 0 4px;
+    }
+    .tag-editor .placeholder {
+      padding: 0 8px;
+      color: #bbb;
+    }
+    .tag-editor .tag-editor-spacer {
+      padding: 0;
+      width: 8px;
+      overflow: hidden;
+      color: transparent;
+      background: none;
+    }
+    .tag-editor input {
+      vertical-align: inherit;
+      border: 0;
+      outline: none;
+      padding: 0;
+      margin: 0;
+      cursor: text;
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      box-shadow: none;
+      background: none;
+      color: #444;
+    }
+    /* hide original input field or textarea visually to allow tab navigation */
+    .tag-editor-hidden-src {
+      position: absolute !important;
+      left: -99999px;
+    }
+    /* hide IE10 "clear field" X */
+    .tag-editor ::-ms-clear {
+      display: none;
+    }
+
+    /* tag style */
+    .tag-editor .tag-editor-tag {
+      padding-left: 5px;
+      color: #46799b;
+      background: #e0eaf1;
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 2px 0 0 2px;
+    }
+
+    /* delete icon */
+    .tag-editor .tag-editor-delete {
+      background: #e0eaf1;
+      cursor: pointer;
+      border-radius: 0 2px 2px 0;
+      padding-left: 3px;
+      padding-right: 4px;
+    }
+    .tag-editor .tag-editor-delete i {
+      line-height: 18px;
+      display: inline-block;
+    }
+    .tag-editor .tag-editor-delete i:before {
+      font-size: 16px;
+      color: #8ba7ba;
+      content: "×";
+      font-style: normal;
+    }
+    .tag-editor .tag-editor-delete:hover i:before {
+      color: #d65454;
+    }
+    .tag-editor .tag-editor-tag.active + .tag-editor-delete,
+    .tag-editor .tag-editor-tag.active + .tag-editor-delete i {
+      visibility: hidden;
+      cursor: text;
+    }
+
+    .tag-editor .tag-editor-tag.active {
+      background: none !important;
+    }
+
+    /* jQuery UI autocomplete - code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css */
+    .ui-autocomplete {
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: default;
+      font-size: 14px;
+    }
+    .ui-front {
+      z-index: 9999;
+    }
+    .ui-menu {
+      list-style: none;
+      padding: 1px;
+      margin: 0;
+      display: block;
+      outline: none;
+    }
+    .ui-menu .ui-menu-item a {
+      text-decoration: none;
+      display: block;
+      padding: 2px 0.4em;
+      line-height: 1.4;
+      min-height: 0; /* support: IE7 */
+    }
+    .ui-widget-content {
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #555;
+    }
+    .ui-widget-content a {
+      color: #46799b;
+    }
+    .ui-widget-content .ui-state-hover,
+    .ui-widget-header .ui-state-hover,
+    .ui-state-focus,
+    .ui-widget-content .ui-state-focus,
+    .ui-widget-header .ui-state-focus {
+      background: #e0eaf1;
+    }
+    .ui-helper-hidden-accessible {
+      display: none;
+    }
+  </style>
+  <body>
+    <div style="padding: 0 7px 0 5px; max-width: 900px; margin: auto">
+      <textarea id="hero-demo" class="tag-editor-hidden-src"></textarea>
+      <ul>
+        <li style="width: 1px">&nbsp;</li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">example tags</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">sortable</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li style="display: block">
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">autocomplete</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">edit in place</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">tab/cursor navigation</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">duplicate check</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">callbacks</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">copy-paste</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">placeholder</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">public methods</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">custom delimiter</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+        <li>
+          <div class="tag-editor-spacer">&nbsp;,</div>
+          <div class="tag-editor-tag">graceful degradation</div>
+          <div class="tag-editor-delete"><i></i></div>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#hero-demo").tagEditor({
+          delimiter: ",",
+          initialTags: ["Hello", "World", "Example", "Tags"],
+          placeholder: "Enter tags ...",
+          autocomplete: {
+            delay: 0,
+            position: {
+              collision: "flip",
+            },
+            source: [
+              "ActionScript",
+              "AppleScript",
+              "Asp",
+              "BASIC",
+              "C",
+              "C++",
+              "CSS",
+              "Clojure",
+              "COBOL",
+              "ColdFusion",
+              "Erlang",
+              "Fortran",
+              "Groovy",
+              "Haskell",
+              "HTML",
+              "Java",
+              "JavaScript",
+              "Lisp",
+              "Perl",
+              "PHP",
+              "Python",
+              "Ruby",
+              "Scala",
+              "Scheme",
+            ],
+          },
+          clickDelete: false,
+          beforeTagSave: beforeTagSavecb,
+          beforeTagDelete: beforeTagDeletecb,
+          onChange: onChangecb,
+          /* autocomplete: {
+            source: googleSuggest,
+            minLength: 3,
+            delay: 250,
+            html: true,
+            position: {
+                collision: 'flip'
+            }
+        }*/
+        });
+
+        function onChangecb(field, editor, tags) {
+          debugger;
+        }
+
+        function beforeTagSavecb(field, editor, tags, tag, val) {
+          debugger;
+        }
+
+        function beforeTagDeletecb(field, editor, tags, val) {
+          debugger;
+          return true;
+        }
+      });
+    </script>
+    <!-- Cierrra form registro -->
+  </body>
+</html>
